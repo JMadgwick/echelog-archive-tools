@@ -24,6 +24,7 @@ locale.setlocale(locale.LC_ALL, '')   # use user's preferred locale
 
 argPath = 'echelog/'
 argHide = True
+outFile = open(argPath + 'output.log', 'w')
 
 files = os.listdir(argPath)
 #Filter out non html files and remove extension to allow easy sorting
@@ -46,5 +47,6 @@ for webpage in pages:
     
     for line in ircLines:
         if line[1] == 'd' or not argHide:
-            print(datetime.strptime(webpage[:10] + line[0],'%Y-%m-%d%H:%M:%S').strftime('%c ') + line[2])
+            outFile.write(datetime.strptime(webpage[:10] + line[0],'%Y-%m-%d%H:%M:%S').strftime('%c ') + line[2])
+outFile.close()
 
