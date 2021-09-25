@@ -1,7 +1,6 @@
 # echelog-archive-tools
 
 Two simple utilities, one to scrape the [WayBackMachine](https://web.archive.org/) archived version of echelog and download HTML pages (containing IRC logs) from a specific channel, the other to parse these, extract the IRC chat logs and store them in a single file using a standard format.
-This also works with logs from the [logbot archive](https://archive.logbot.info/).
 
 _License: GNU AGPLv3_
 
@@ -17,7 +16,7 @@ The logs are available as HTML pages only, with one day of a channel on a single
 
 The purpose of the scraping tool is to easily download HTML log pages from the archived version of Echelog. These pages can then be parsed with the parsing tool to produce a single IRC log in the usual format.
 
-The scraping tool works by downloading the initial page, finding the link to the previous page, downloading that page, and so on. To find the initial page (last date of IRC logs logged by Echelog), use the wildcard search on the WayBackMachine and get the archived URL for the page ending with the highest number (result URLs can be sorted). For postfix IRC logs, this would look like [web.archive.org/web/*/http://echelog.com/logs/browse/postfix/*](https://web.archive.org/web/*/http://echelog.com/logs/browse/postfix/*). The complete list of all IRC channels on Echelog was/is [on the homepage](https://web.archive.org/web/20200601065804/https://echelog.com/).
+The scraping tool works by downloading the initial page, finding the link to the previous page, downloading that page, and so on. To find the initial page (last date of IRC logs logged by Echelog), use the wildcard search on the WayBackMachine and get the archived URL for the page ending with the highest number (result URLs can be sorted). For postfix IRC logs, this would look like [`web.archive.org/web/*/http://echelog.com/logs/browse/postfix/*`](https://web.archive.org/web/*/http://echelog.com/logs/browse/postfix/*). The complete list of all IRC channels on Echelog was/is [on the homepage](https://web.archive.org/web/20200601065804/https://echelog.com/).
 
     
 ### echelogScraper.py
